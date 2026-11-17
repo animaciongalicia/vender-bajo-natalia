@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Casa Eirís · Propiedades en A Coruña</title>
-<meta name="description" content="Casa Eirís: pocas propiedades en A Coruña, bien elegidas y explicadas con todos los datos. Pisos y locales en venta.">
-<meta property="og:title" content="Casa Eirís · Propiedades en A Coruña">
-<meta property="og:description" content="Pocas propiedades, bien elegidas y explicadas con todos los datos.">
+<title>Ezasa Inmobiliaria · Pisos y locales en A Coruña</title>
+<meta name="description" content="Ezasa Inmobiliaria: viviendas y locales comerciales en venta en A Coruña, con fichas completas y trato personal.">
+<meta property="og:title" content="Ezasa Inmobiliaria · A Coruña">
+<meta property="og:description" content="Viviendas y locales comerciales en venta en A Coruña.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,10 +16,10 @@
 <body>
 
 <header class="top">
-  <a class="brand" href="#inicio">Casa <span>Eirís</span></a>
+  <a class="brand" href="#inicio"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8"/><path d="M8 16.5 16 9l8 7.5M11 15v8h10v-8"/></svg><span>Ezasa<small>Inmobiliaria</small></span></a>
   <nav>
     <a href="#propiedades">Propiedades</a>
-    <a href="#como">Cómo funciona</a>
+    <a href="#servicios">Servicios</a>
     <a href="#vender">Vender</a>
     <a class="btn btn-small" href="#contacto">Contactar</a>
   </nav>
@@ -27,41 +27,79 @@
 
 <main id="inicio">
 
-  <section class="hero">
-    <div class="hero-text">
-      <p class="eyebrow">Inmobiliaria en A Coruña</p>
-      <h1>Pocas propiedades. <em>Bien elegidas.</em></h1>
-      <p class="lead">Pisos y locales en A Coruña explicados con todos los datos: precio, metros, gastos y posibilidades. Para que decidas con la cabeza y no con prisa.</p>
-      <div class="hero-cta">
-        <a class="btn" href="#propiedades">Ver propiedades</a>
-        <a class="link" href="#vender">Quiero vender la mía →</a>
-      </div>
-    </div>
-    <div class="ph hero-photo"><img src="https://cdn.gamma.app/69qkpmgsd3rf2vl/design-anything/p0EeBNKSfowDdc2KpDkYN/UEOrLgsfkWNfQW8dTA4Q4.jpg" alt="Interior (imagen de ejemplo)" onerror="this.remove()"><span>Fotografía en preparación</span><b>Imagen de ejemplo</b></div>
+  <section class="home-hero">
+    <p class="eyebrow">Inmobiliaria en A Coruña</p>
+    <h1>Encuentra tu sitio en A Coruña.</h1>
+    <p class="lead">Viviendas y locales comerciales con fichas completas, precios claros y trato personal.</p>
+    <form class="search" id="search">
+      <label>Tipo
+        <select name="tipo">
+          <option value="">Todos</option>
+          <option value="vivienda">Vivienda</option>
+          <option value="local">Local comercial</option>
+        </select>
+      </label>
+      <label>Zona
+        <select name="zona" id="zonas"><option value="">Toda A Coruña</option></select>
+      </label>
+      <label>Precio máximo
+        <select name="max">
+          <option value="">Sin límite</option>
+          <option value="150000">150.000 €</option>
+          <option value="200000">200.000 €</option>
+          <option value="250000">250.000 €</option>
+          <option value="300000">300.000 €</option>
+        </select>
+      </label>
+      <button class="btn" type="submit">Buscar</button>
+    </form>
+  </section>
+
+  <section class="trust" aria-label="Ventajas">
+    <div><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM9 9h6M9 13h6M9 17h3"/></svg><p><strong>Fichas completas</strong>Precio, metros y gastos a la vista.</p></div>
+    <div><svg viewBox="0 0 24 24"><path d="M4 7h16v13H4zM4 11h16M8 4v5M16 4v5"/></svg><p><strong>Visitas con cita</strong>A tu hora y sin prisas.</p></div>
+    <div><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4.5 4-6 8-6s7 1.500 8 6"/></svg><p><strong>Trato personal</strong>Una sola persona de principio a fin.</p></div>
+    <div><svg viewBox="0 0 24 24"><path d="M12 21s7-6.200 7-11a7 7 0 0 0-14 0c0 4.800 7 11 7 11z"/><circle cx="12" cy="10" r="2.500"/></svg><p><strong>Solo A Coruña</strong>Conocimiento real de cada barrio.</p></div>
   </section>
 
   <section id="propiedades" class="listing">
     <div class="listing-head">
       <div>
         <p class="eyebrow">En venta</p>
-        <h2>Propiedades disponibles.</h2>
+        <h2>Propiedades destacadas</h2>
       </div>
       <div class="tabs" role="tablist">
-        <button role="tab" aria-selected="true" data-filter="Todas">Todas</button>
-        <button role="tab" aria-selected="false" data-filter="Piso">Pisos</button>
-        <button role="tab" aria-selected="false" data-filter="Local">Locales</button>
+        <button role="tab" aria-selected="true" data-filter="">Todas</button>
+        <button role="tab" aria-selected="false" data-filter="vivienda">Viviendas</button>
+        <button role="tab" aria-selected="false" data-filter="local">Locales</button>
       </div>
     </div>
     <div id="grid" class="grid"></div>
+    <p id="empty" class="sub" hidden>No hay propiedades con esos filtros ahora mismo. Prueba a ampliar la búsqueda.</p>
   </section>
 
-  <section id="como" class="how">
-    <p class="eyebrow">Cómo funciona</p>
-    <h2>Comprar sin sorpresas.</h2>
-    <div class="steps">
-      <div><b>1</b><h3>Todos los datos a la vista</h3><p>Cada ficha enseña precio, metros, gastos y estado real. Lo que hay, sin letra pequeña.</p></div>
-      <div><b>2</b><h3>Visita con tiempo</h3><p>Ves la propiedad con calma y con alguien que la conoce de verdad. Preguntas todo lo que quieras.</p></div>
-      <div><b>3</b><h3>Trato cercano</h3><p>Hablas con una persona de principio a fin. Sin centralitas y sin que te pasen de mano en mano.</p></div>
+  <section id="servicios" class="services">
+    <p class="eyebrow">Servicios</p>
+    <h2>Qué puedes hacer aquí</h2>
+    <div class="service-grid">
+      <article class="t-vivienda">
+        <svg viewBox="0 0 24 24"><path d="M3 11.500 12 4l9 7.500M6 10v10h12V10M10 20v-6h4v6"/></svg>
+        <h3>Comprar vivienda</h3>
+        <p>Pisos revisados, con sus gastos reales y una calculadora de hipoteca en cada ficha.</p>
+        <a class="link" href="#propiedades" data-go="vivienda">Ver viviendas →</a>
+      </article>
+      <article class="t-local">
+        <svg viewBox="0 0 24 24"><path d="M4 9h16l-1.500-5h-13zM5 9v11h14V9M9 20v-6h6v6"/></svg>
+        <h3>Locales e inversión</h3>
+        <p>Bajos comerciales con sus opciones de uso y los números de rentabilidad hechos.</p>
+        <a class="link" href="#propiedades" data-go="local">Ver locales →</a>
+      </article>
+      <article>
+        <svg viewBox="0 0 24 24"><path d="M4 20h16M6 20V9l6-5 6 5v11M9.500 13.500l2 2 3.500-4"/></svg>
+        <h3>Vender tu propiedad</h3>
+        <p>Ficha propia, buenas fotos y compradores filtrados para vender antes y mejor.</p>
+        <a class="link" href="#vender">Cómo se vende →</a>
+      </article>
     </div>
   </section>
 
@@ -82,10 +120,10 @@
   <section id="contacto" class="contact">
     <div>
       <p class="eyebrow">Contacto</p>
-      <h2>Cuéntame qué buscas.</h2>
+      <h2>Cuéntame qué buscas</h2>
       <p>Escribe y recibes respuesta personal. Cuando encaja, la visita se organiza en pocos días.</p>
     </div>
-    <form id="form" novalidate data-subject="Contacto desde la web de Casa Eirís">
+    <form id="form" novalidate data-subject="Contacto desde la web de Ezasa Inmobiliaria">
       <label>Nombre<input name="Nombre" required autocomplete="name"></label>
       <label>Email<input name="Email" type="email" required autocomplete="email"></label>
       <label>¿Qué necesitas?
@@ -98,9 +136,7 @@
         </select>
       </label>
       <label>Propiedad que te interesa
-        <select name="Propiedad" id="propiedad">
-          <option value="">Ninguna en concreto</option>
-        </select>
+        <select name="Propiedad" id="propiedad"><option value="">Ninguna en concreto</option></select>
       </label>
       <label class="full">Mensaje<textarea name="Mensaje" rows="4"></textarea></label>
       <button class="btn full" type="submit">Enviar</button>
@@ -110,9 +146,14 @@
 
 </main>
 
-<footer>
-  <p>Casa Eirís · Propiedades en A Coruña</p>
-  <p class="fine">La información de esta página es orientativa y no tiene valor contractual.</p>
+<footer class="foot">
+  <div>
+    <p class="foot-brand">Ezasa <small>Inmobiliaria</small></p>
+    <p class="fine">Viviendas y locales comerciales en venta en A Coruña.</p>
+  </div>
+  <div><h4>Propiedades</h4><a href="#propiedades" data-go="vivienda">Viviendas</a><a href="#propiedades" data-go="local">Locales comerciales</a></div>
+  <div><h4>Ezasa</h4><a href="#servicios">Servicios</a><a href="#vender">Vender tu propiedad</a><a href="#contacto">Contacto</a></div>
+  <p class="fine foot-legal">La información de esta página es orientativa y no tiene valor contractual.</p>
 </footer>
 
 <script src="propiedades.js"></script>

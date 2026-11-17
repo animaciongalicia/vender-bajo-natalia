@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vivienda en venta · Ezasa Inmobiliaria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body class="t-vivienda">
+
+<header class="top">
+  <a class="brand" href="../index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8"/><path d="M8 16.5 16 9l8 7.5M11 15v8h10v-8"/></svg><span>Ezasa<small>Inmobiliaria</small></span></a>
+  <nav>
+    <a href="../index.html#propiedades">← Todas las propiedades</a>
+    <a href="#detalles">Detalles</a>
+    <a href="#hipoteca">Hipoteca</a>
+    <a class="btn btn-small" href="#contacto">Pedir visita</a>
+  </nav>
+</header>
+
+<main id="ficha-vivienda">
+  <p id="ejemplo" class="example-bar" hidden>Ficha de ejemplo: los datos de esta vivienda son inventados para mostrar el diseño.</p>
+
+  <section class="hero">
+    <div class="hero-text">
+      <p class="badge">Vivienda</p>
+      <p class="eyebrow" id="vZona"></p>
+      <h1 id="vTitulo"></h1>
+      <p class="lead" id="vDesc"></p>
+      <dl class="facts" id="vFacts"></dl>
+      <div class="hero-cta">
+        <a class="btn" href="#contacto">Pedir visita</a>
+        <a class="link" href="#hipoteca">Calcular mi cuota →</a>
+      </div>
+    </div>
+    <div class="ph hero-photo" id="vFoto"><span>Fotografía en preparación</span></div>
+  </section>
+
+  <section class="punch" id="vPunch" aria-label="Lo mejor de esta vivienda"></section>
+
+  <section id="detalles" class="sheet">
+    <div class="sheet-head">
+      <p class="eyebrow">Ficha</p>
+      <h2>Los datos, claros.</h2>
+      <p>Todo lo que necesitas saber antes de venir a verla.</p>
+    </div>
+    <table><tbody id="vTabla"></tbody></table>
+  </section>
+
+  <section id="hipoteca" class="numbers">
+    <div class="numbers-text">
+      <p class="eyebrow">Tu hipoteca</p>
+      <h2>Mira cuánto pagarías al mes.</h2>
+      <p>Mueve la entrada, los años y el interés que te ofrece tu banco. Así llegas a la visita sabiendo si esta casa encaja en tu bolsillo.</p>
+      <ul class="args">
+        <li><strong>Entrada.</strong> Lo habitual es aportar al menos un 20 % del precio.</li>
+        <li><strong>Gastos de compra.</strong> Reserva además un margen para impuestos, notaría y registro.</li>
+        <li><strong>Tu banco manda.</strong> El interés real depende de tu perfil y de la oferta que consigas.</li>
+      </ul>
+    </div>
+    <div class="calc">
+      <h3>Calcula tu cuota</h3>
+      <div class="field"><label for="down">Entrada</label><output id="downOut"></output><input id="down" type="range" min="0" max="60" step="5" value="20"></div>
+      <div class="field"><label for="years">Plazo</label><output id="yearsOut"></output><input id="years" type="range" min="5" max="35" step="1" value="25"></div>
+      <div class="field"><label for="rate">Interés anual</label><output id="rateOut"></output><input id="rate" type="range" min="1" max="6" step="0.1" value="3"></div>
+      <div class="calc-result">
+        <div><span>Entrada</span><strong id="downEur"></strong></div>
+        <div><span>Hipoteca</span><strong id="loanOut"></strong></div>
+        <div><span>Total intereses</span><strong id="intOut"></strong></div>
+        <div class="big"><span>Cuota mensual</span><strong id="quotaOut"></strong></div>
+      </div>
+      <p class="fine">Cálculo orientativo con interés fijo. No es una oferta de financiación.</p>
+    </div>
+  </section>
+
+  <section id="contacto" class="contact">
+    <div>
+      <p class="eyebrow">Siguiente paso</p>
+      <h2>¿Te interesa? Pide una visita.</h2>
+      <p>Cuéntame qué buscas. Cuando encaja, la visita se organiza en pocos días.</p>
+    </div>
+    <form id="form" novalidate>
+      <label>Nombre<input name="Nombre" required autocomplete="name"></label>
+      <label>Email<input name="Email" type="email" required autocomplete="email"></label>
+      <label>¿Para qué la quieres?
+        <select name="Uso" required><option value="">Elige una opción</option><option>Vivir en ella</option><option>Invertir y alquilar</option></select>
+      </label>
+      <label>¿Cómo la pagarías?
+        <select name="Pago" required><option value="">Elige una opción</option><option>Al contado</option><option>Con hipoteca ya estudiada</option><option>Aún tengo que mirarlo</option></select>
+      </label>
+      <label class="full">Mensaje<textarea name="Mensaje" rows="4"></textarea></label>
+      <button class="btn full" type="submit">Pedir visita</button>
+      <p id="formMsg" class="fine full" role="status"></p>
+    </form>
+  </section>
+</main>
+
+<footer class="foot">
+  <div><p class="foot-brand">Ezasa <small>Inmobiliaria</small></p><p class="fine">Viviendas y locales comerciales en venta en A Coruña.</p></div>
+  <p class="fine foot-legal">La información de esta página es orientativa y no tiene valor contractual.</p>
+</footer>
+
+<script src="../propiedades.js"></script>
+<script src="../script.js"></script>
+</body>
+</html>
