@@ -1,6 +1,6 @@
 // Dirección que recibe las solicitudes de visita. Vacía = formulario sin conectar.
 const CONTACT_EMAIL = '';
-const PRICE = 120000;
+const PRICE = 87000;
 
 // Pestañas de los tres futuros
 const tabs = document.querySelectorAll('[data-tab]');

@@ -12,7 +12,7 @@ window.PROPIEDADES = [
     id: 'bajo-bugallal-marchesi', tipo: 'local', zona: 'Monelos',
     titulo: 'Bajo a pie de calle en Bugallal Marchesi',
     m2: 70, extras: ['5 m de escaparate', 'Sin comunidad'],
-    precio: 120000, foto: FOTOS.fachada,
+    precio: 87000, foto: FOTOS.fachada,
     url: 'propiedades/bajo-bugallal-marchesi.html',
   },
   {
