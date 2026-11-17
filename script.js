@@ -12,18 +12,32 @@ tabs.forEach((tab) => {
   });
 });
 
-// Calculadora de rentabilidad bruta
-const rent = document.getElementById('rent');
-const euro = (n) => n.toLocaleString('es-ES') + ' €';
+// Calculadora para inversores
+const $ = (id) => document.getElementById(id);
+const euro = (n) => Math.round(n).toLocaleString('es-ES', { useGrouping: 'always' }) + ' €';
+const dec = (n) => n.toLocaleString('es-ES', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 function updateCalc() {
-  const monthly = Number(rent.value);
-  const yearly = monthly * 12;
-  document.getElementById('rentOut').textContent = euro(monthly);
-  document.getElementById('yearOut').textContent = euro(yearly);
-  document.getElementById('yieldOut').textContent =
-    ((yearly / PRICE) * 100).toLocaleString('es-ES', { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + ' %';
+  const rent = Number($('rent').value);
+  const costs = Number($('costs').value);
+  const fees = Number($('fees').value);
+  const total = PRICE * (1 + fees / 100);
+  const net = rent * 12 - costs;
+  $('rentOut').textContent = euro(rent);
+  $('costsOut').textContent = euro(costs);
+  $('feesOut').textContent = dec(fees) + ' %';
+  $('totalOut').textContent = euro(total);
+  $('netOut').textContent = euro(net);
+  if (net <= 0) {
+    $('yieldOut').textContent = '—';
+    $('paybackOut').textContent = '—';
+    $('tenOut').textContent = 'Con estas cifras el alquiler no cubre los gastos.';
+    return;
+  }
+  $('yieldOut').textContent = dec((net / total) * 100) + ' %';
+  $('paybackOut').textContent = dec(total / net) + ' años';
+  $('tenOut').innerHTML = `En 10 años habrás cobrado <strong>${euro(net * 10)}</strong> netos. Y el bajo sigue siendo tuyo.`;
 }
-rent.addEventListener('input', updateCalc);
+['rent', 'costs', 'fees'].forEach((id) => $(id).addEventListener('input', updateCalc));
 updateCalc();
 
 // Formulario: abre el correo del visitante con la solicitud ya redactada

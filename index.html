@@ -20,7 +20,7 @@
   <nav>
     <a href="#futuros">Opciones</a>
     <a href="#ficha">Ficha</a>
-    <a href="#numeros">Números</a>
+    <a href="#numeros">Inversores</a>
     <a href="#preguntas">Preguntas</a>
     <a class="btn btn-small" href="#contacto">Pedir visita</a>
   </nav>
@@ -106,7 +106,7 @@
           <li>Planta diáfana: se adapta a casi cualquier inquilino</li>
           <li>Historial de actividad comercial</li>
         </ul>
-        <p class="note">Haz tus propias cuentas más abajo, con el alquiler que tú esperas.</p>
+        <p class="note"><a href="#numeros">Calcula en cuánto tiempo recuperas la inversión →</a></p>
       </div>
       <figure class="plan">
         <svg viewBox="0 0 460 200" role="img" aria-label="Distribución orientativa como local diáfano">
@@ -173,21 +173,40 @@
   </section>
 
   <section id="numeros" class="numbers">
-    <div>
-      <p class="eyebrow">Los números</p>
-      <h2>Haz tus cuentas.</h2>
-      <p>El precio sale a <strong>1.714 €/m²</strong>. Sin cuota de comunidad y sin comisión de agencia, lo que pagas es lo que cuesta el bajo.</p>
-      <p class="fine">Rentabilidad bruta: alquiler anual dividido entre el precio. No incluye impuestos, IBI, seguro ni periodos sin inquilino.</p>
+    <div class="numbers-text">
+      <p class="eyebrow">Para inversores</p>
+      <h2>120.000 € que trabajan para ti cada mes.</h2>
+      <p>Un bajo a pie de calle es de las inversiones más sencillas que existen: lo compras, lo alquilas y cobras. Este, además, juega con ventaja.</p>
+      <ul class="args">
+        <li><strong>0 € de comunidad.</strong> Lo que cobras de alquiler no se lo come una cuota mensual.</li>
+        <li><strong>Sin comisión de agencia.</strong> Compras directo al propietario: todo tu dinero va al inmueble.</li>
+        <li><strong>Tres salidas, no una.</strong> Alquilarlo como local, usarlo tú o estudiar su paso a vivienda. Más opciones, menos riesgo de tenerlo vacío.</li>
+        <li><strong>El bajo sigue siendo tuyo.</strong> Cuando el alquiler te haya devuelto lo invertido, conservas el inmueble entero.</li>
+        <li><strong>Inversión contenida.</strong> 1.714 €/m² por un local con escaparate a la calle.</li>
+      </ul>
     </div>
     <div class="calc">
-      <label for="rent">Alquiler mensual que tú esperas</label>
-      <output id="rentOut">700 €</output>
-      <input id="rent" type="range" min="300" max="1500" step="25" value="700">
-      <div class="calc-result">
-        <div><span>Ingreso anual</span><strong id="yearOut">8.400 €</strong></div>
-        <div><span>Rentabilidad bruta</span><strong id="yieldOut">7,0 %</strong></div>
+      <h3>Haz tus cuentas</h3>
+      <div class="field">
+        <label for="rent">Alquiler mensual que esperas</label><output id="rentOut"></output>
+        <input id="rent" type="range" min="300" max="1500" step="25" value="700">
       </div>
-      <p class="fine">La cifra de alquiler la pones tú. Esta página no te promete ninguna renta.</p>
+      <div class="field">
+        <label for="costs">Gastos anuales (IBI, seguro…)</label><output id="costsOut"></output>
+        <input id="costs" type="range" min="0" max="2000" step="50" value="600">
+      </div>
+      <div class="field">
+        <label for="fees">Impuestos y gastos de compra</label><output id="feesOut"></output>
+        <input id="fees" type="range" min="0" max="15" step="0.5" value="10">
+      </div>
+      <div class="calc-result">
+        <div><span>Inversión total</span><strong id="totalOut"></strong></div>
+        <div><span>Ingreso neto anual</span><strong id="netOut"></strong></div>
+        <div><span>Rentabilidad neta</span><strong id="yieldOut"></strong></div>
+        <div class="big"><span>Recuperas tu inversión en</span><strong id="paybackOut"></strong></div>
+      </div>
+      <p class="tenyears" id="tenOut"></p>
+      <p class="fine">Las cifras las pones tú: esta página no promete ninguna renta. Cálculo antes de impuestos sobre la renta y sin contar meses sin inquilino ni revalorización.</p>
     </div>
   </section>
 
